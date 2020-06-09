@@ -19,19 +19,26 @@ var main = (function(){
 			app.el.contentBlock = ui.uiView({className: 'content_block'});
 			app.el.menuBlock = ui.uiView({className: 'menu_block'});
 
-			app.el.mainBlock.appendChild(app.el.menuBlock);
 			app.el.mainBlock.appendChild(app.el.contentBlock);
+			app.el.mainBlock.appendChild(app.el.menuBlock);
 
 			this.addSchemeButton = ui.uiButton({
-				action: () => {console.log('123')},
+				action: () => {
+					app.el.contentBlock.innerHTML =
+						`<svg
+							version="1.1" 
+							xmlns="http://www.w3.org/2000/svg" 
+							xmlns:xlink="http://www.w3.org/1999/xlink" 
+							x="0px" y="0px"
+							viewBox="0 0 10000 10000" 
+							style="enable-background:new 0 0 10000 10000;" 
+							xml:space="preserve">
+						</svg>`;
+					app.el.svg = app.el.contentBlock.querySelector('svg');
+					editor.init()
+				},
 				className: 'add_button',
 				text: 'Новая схема'
-			});
-
-			this.addHeaderSchemeButton = ui.uiButton({
-				action: () => {console.log('123')},
-				className: 'add_button',
-				text: ''
 			});
 
 			this.addHeaderImportButton = ui.uiButton({
@@ -41,7 +48,6 @@ var main = (function(){
 			});
 
 			app.el.contentBlock.appendChild(this.addSchemeButton);
-			app.el.headerOuter.appendChild(this.addHeaderSchemeButton);
 			app.el.headerOuter.appendChild(this.addHeaderImportButton);
 		},
 		openPopup: function() {

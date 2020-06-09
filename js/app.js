@@ -1,7 +1,24 @@
 var app = (function(){
 	return {
+		defaults: {
+			space: {
+				seats: 15,
+				rows: 35,
+			},
+			seatCurveRadiusMultiplier: 0,
+		},
+		schema: {
+			sectors: {},
+			activeGroup: {
+				group: null,
+				value: '',
+			},
+			action: {
+				name: '',
+				data: '',
+			},
+		},
 		data: {
-			dd: 1,
 		},
 		el: {
 			body: null,
@@ -17,7 +34,6 @@ var app = (function(){
 		init: function() {
 			this.el.body = document.body;
 			router.init();
-			// editor.init();
 			main.init();
 		}
 	}

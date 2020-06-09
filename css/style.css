@@ -41,6 +41,7 @@ body {
 .main_block {
 	flex: 1 0 auto;
 	display: flex;
+	justify-content: space-between;
 }
 
 .menu_block {
@@ -52,11 +53,17 @@ body {
 }
 
 .content_block {
-	padding: 25px;
+	position: relative;
+	overflow-y: scroll;
+	flex: 1;
 }
 
 .button_block {
 	cursor: pointer;
+}
+
+.selected_layer {
+	font-weight: bold;
 }
 
 .ico_block {
@@ -79,7 +86,8 @@ body {
 	justify-content: center;
 	border: 1px dotted #8a8a8a;
 	height: 217px;
-	min-width: 335px;
+	width: 335px;
+	margin: 25px;
 	color: #8a8a8a;
 	border-radius: 2px;
 	font-size: 14px;

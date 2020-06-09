@@ -1,0 +1,11 @@
+.content_block svg {
+	position: absolute;
+	width: 10000px;
+}
+
+.rect_area {
+	outline: 1px solid rgba(255, 0, 0, 0.7);
+	background: rgba(255, 0, 0, 0.3);
+	position: absolute;
+	pointer-events: none;
+}
